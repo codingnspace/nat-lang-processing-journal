@@ -1,8 +1,10 @@
 .CommentBubble {
+    min-width: 35%;
     max-width: 50%;
     position: relative;
     padding: 20px;
     margin: 20px;
+    margin-bottom: 30px;
     border: 1px solid gray;
     border-radius: 10px;
 }
@@ -15,6 +17,26 @@
     width: 30px;
     height: auto;
     position: absolute;
-    left: -10px;
-    bottom: -20px;
+    left: -15.5px;
+    bottom: -15.5px;
+    border-radius: 50%;
+    border: 1px solid gray;
+}
+
+.CommentBubble.left {
+    float: left;
+}
+
+.CommentBubble.right {
+    float: right;
+}
+
+.CommentBubble.left img {
+    left: -15.5px;
+    right: auto;
+}
+
+.CommentBubble.right img {
+    right: -15.5px;
+    left: auto;
 }
