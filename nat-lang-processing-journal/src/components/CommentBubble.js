@@ -1,7 +1,7 @@
 import React from 'react'
 import './CommentBubble.css'
 
-function CommentBubble({text, user}) {
+export default function CommentBubble({text, user}) {
     const cn = user && user.isBot ? 'CommentBubble left' : 'CommentBubble right'
     return (
         <article className={cn}>
@@ -10,5 +10,3 @@ function CommentBubble({text, user}) {
         </article>
     )
 }
-
-export default CommentBubble

@@ -1,7 +1,7 @@
 import React from 'react'
 import CommentBubble from './CommentBubble'
 
-function ChatList({messages}) {
+export default function ChatList({messages}) {
     const list = messages.map((message, idx ) => <CommentBubble user={message.user} text={message.text} key={idx} />)
     return (
         <section className="ChatList">
@@ -9,5 +9,3 @@ function ChatList({messages}) {
         </section>
     )
 }
-
-export default ChatList
