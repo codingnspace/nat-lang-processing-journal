@@ -31,8 +31,8 @@ export default function ChatBox()  {
  
 
     const handleChange = (e) => {
-        axios.post('localhost:3001/api/newUserMsg', {
-            text: 'Hi',
+        axios.post('/newUserMsg', {
+            text: 'i hate  you',
             headers: {
                 'Content-Type': 'application/json;charset=UTF-8',
                 "Access-Control-Allow-Origin": "*",
