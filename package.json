@@ -1,0 +1,23 @@
+{
+  "name": "nat-lang-processing-journal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"cd backend && node server.js\" \"cd client && npm start\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codingnspace/nat-lang-processing-journal.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codingnspace/nat-lang-processing-journal/issues"
+  },
+  "homepage": "https://github.com/codingnspace/nat-lang-processing-journal#readme",
+  "dependencies": {
+    "concurrently": "^5.0.0"
+  }
+}
