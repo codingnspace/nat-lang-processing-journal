@@ -21,12 +21,29 @@ export default class AttendService extends React.Component  {
         })
     }
 
+    handleDayClick = (e) => {
+        const target = e.target
+        const currentValue = target.innerText
+
+        if (currentValue === 'NOT Completed') {
+            target.innerText = ''
+        } else if (currentValue === 'Completed') {
+            target.innerText = 'NOT Completed'
+        } else {
+            target.innerText = 'Completed'
+        }
+    }
+
 
     render() {
         console.log(this.state.dates)
         const dates = this.state.dates.map(date => {
             const classNames = `date ${date.type}`
-            return <div className={classNames}>{date.date}</div>
+            return (
+                <div className={classNames} onClick={this.handleDayClick}>
+                    {date.date}
+                </div>
+            )
         })
         return (
             <article>
