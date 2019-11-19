@@ -1,0 +1,63 @@
+.dates {
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 390px;
+}
+
+.date {
+    padding: 20px;
+    background-color: green;
+    flex: 1 0 0%;
+    border: 1px solid white;
+}
+
+@media screen and (min-width: 440px) {
+    .date {
+        flex: 1 0 5%;
+    }
+}
+
+@media screen and (min-width: 535px) {
+    .date {
+        flex: 1 0 6%;
+    }
+}
+
+@media screen and (min-width: 614px) {
+    .date {
+        flex: 1 0 7%;
+    }
+}
+
+@media screen and (min-width: 725px) {
+    .date {
+        flex: 1 0 7%;
+    }
+}
+
+@media screen and (min-width: 886px) {
+    .date {
+        flex: 1 0 8%;
+    }
+}
+
+/* @media screen and (min-width: 1141px) {
+    .date {
+        flex: 1 0 9%;
+    }
+} */
+
+@media screen and (min-width: 934px) {
+    .date {
+        flex: 1 0 10%;
+    }
+}
+
+
+.date.previous {
+    background-color: grey;
+}
+
+.date.next {
+    background-color: yellow;
+}
