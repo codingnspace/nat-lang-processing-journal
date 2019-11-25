@@ -52,9 +52,142 @@
   position: relative;
 }
 
-.blocks img {
+.right div {
+  border: 1px solid green;
+}
+
+.left div {
+  border: 1px solid green;
+}
+
+.bottom div {
+  border: 1px solid red;
+}
+
+.top div {
+  border: 1px solid red;
+}
+
+.top,
+.bottom {
+  display: flex;
+  flex-wrap: wrap;
+}
+.right,
+.left {
+  display: flex;
+  flex-wrap: wrap;
+  width: 21%;
+}
+
+.test {
+  width: 205px;
+  height: 219px;
+  border: 1px solid red;
+  position: relative;
+}
+
+.test img {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translateY(-50%) translateX(-50%);
+
+  max-height: 80%;
+  max-width: 80%;
+}
+
+.ConcentricCircles {
+  position: relative;
+  height: 300px;
+}
+
+.Circle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
+
+.Circle:first-of-type {
+  z-index: 1;
+}
+
+.Bar {
+  position: relative;
+}
+
+.Bar svg:first-of-type {
+  position: absolute;
+}
+
+.Bar {
+  background-size: cover;
+  background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.freepik.com%2Ffree-vector%2Fpolka-dot-background_1069-54.jpg&f=1&nofb=1");
+  height: 110px;
+}
+
+.Bar.colorfulDots {
+  background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.wallpapersafari.com%2F73%2F17%2F7no98i.gif&f=1&nofb=1")
+}
+
+.Bar .progress {
+  width: 100%;
+  height: 20px;
+}
+
+.Bar .progress div {
+  display: inline-block;
+  height: 100%;
+  text-align: right;
+}
+
+.Bar .progress .progress--total {
+  float: right;
+}
+
+.fa-spin {
+  animation: fa-spin 8s infinite linear !important;
+}
+
+.IconLog {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.IconLog--square {
+  padding: 10px;
+  border: 1px solid gold;
+  text-align: center;
+  cursor: pointer;
+}
+
+.IconLog--square svg {
+  height: 38px;
+  width: 38px;
+}
+
+.IconLog--square.complete {
+  background-color: gold;
+}
+
+.IconLog--square.complete svg path{
+  fill: blue;
+}
+
+.Week .row {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto;
+}
+
+.YearInPixels {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto;
+}
+
+.YearInPixels .pixel {
+  padding: 15px;
+  border: 1px solid black;
+  text-align: center;
+  cursor: pointer;
 }

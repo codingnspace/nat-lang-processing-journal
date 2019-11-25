@@ -15,7 +15,7 @@ export default class Week extends React.Component  {
     }
     render() {
         return (
-            <article>
+            <article className="Week">
                 <h2>Week</h2>
                 <div className="row">
                     <div className="day row-heading">Mo</div>

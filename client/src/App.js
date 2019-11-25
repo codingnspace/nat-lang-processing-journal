@@ -6,6 +6,11 @@ import ShoppingList from './components/ShoppingList';
 import AttendService from './components/AttendService';
 import Week from './components/Week';
 import BlockWall from './components/BlockWall';
+import ConcentricCircles from './components/ConcentricCircles';
+import Bar from './components/Bar';
+import IconLog from './components/IconLog';
+import YearInPixels from './components/YearInPixels';
+import WorryTree from './components/WorryTree';
 
 function App() {
 
@@ -18,6 +23,11 @@ function App() {
         <Route path="/service-log" render={() => <AttendService />} />
         <Route path="/week-log" render={() => <Week />} />
         <Route path="/block-log" render={() => <BlockWall />} />
+        <Route path="/circles-chart" render={() => <ConcentricCircles />} />
+        <Route path="/bar-chart" render={() => <Bar progressPercent="40%" />} />
+        <Route path="/icon-log" render={() => <IconLog />} />
+        <Route path="/year-in-pixels" render={() => <YearInPixels />} />
+        <Route path="/worry-tree" render={() => <WorryTree />} />
       </Switch>
     </main>
    </Router>
