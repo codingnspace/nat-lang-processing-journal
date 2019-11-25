@@ -1,5 +1,4 @@
 import React from 'react'
-import d3ConcentricCircles from 'd3-concentric-circles';
 
 const Circle = ({size, color, style}) => {
     return (

@@ -1,11 +1,12 @@
 import React from 'react'
-
+import ChatList from './ChatList'
+import './ChatBox.css'
 export default class WorryTree extends React.Component  {
     constructor() {
         super()
         this.questions = [
             {
-                question: "What am I worrying about?",
+                question: "What are you worrying about?",
                 answers: 'user-input'
             },
             {
@@ -32,7 +33,25 @@ export default class WorryTree extends React.Component  {
         ]
         this.state = {
             nextQuestion: 1,
-            currentQuestion: 0
+            currentQuestion: 0,
+            users: [
+                {
+                    id: 0,
+                    profilePic: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.hookedonhallmark.com%2Fassets%2Fimages%2F2015%2F1795qx9007.jpg&f=1&nofb=1',
+                    isBot: true
+                },
+                {
+                    id: 1,
+                    profilePic: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.vwh31Iaw8A5pB5hOyH6YvQHaIq%26pid%3DApi&f=1',
+                    isBot: false
+                }
+            ],
+            newChat: {},
+            chats: [{text: this.questions[0].question, user: {
+                id: 0,
+                profilePic: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.hookedonhallmark.com%2Fassets%2Fimages%2F2015%2F1795qx9007.jpg&f=1&nofb=1',
+                isBot: true
+            }}]
         }
     }
 
@@ -61,10 +80,16 @@ export default class WorryTree extends React.Component  {
         return (
             <article className="WorryTree">
                 <h2>Worry Tree</h2>
-                <div className="WorryTree--question">
-                    {this.questions[this.state.currentQuestion].question}
-                </div>
-                <button onClick={this.handleClick}>Next</button>
+                <aside className="ChatBox">
+                <ChatList messages={this.state.chats} />
+                <article className="ChatBox--input-container">
+                    <form onSubmit={this.addChat}>
+                        <input ref="newChatText" onChange={this.handleChange}  placeholder="say something..." />
+                        <button type="submit" >send</button>
+                    </form>
+                </article>
+            </aside>
+
             </article>
         )
     }
