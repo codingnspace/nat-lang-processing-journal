@@ -46,11 +46,19 @@
             "domain": "default",
             "intent": "greetings.bye"
           },
+          "bitch,bye": {
+            "domain": "default",
+            "intent": "greetings.bye"
+          },
           "bye,for,now": {
             "domain": "default",
             "intent": "greetings.bye"
           },
           "go,i,must": {
+            "domain": "default",
+            "intent": "greetings.bye"
+          },
+          "tah,tah": {
             "domain": "default",
             "intent": "greetings.bye"
           },
@@ -65,11 +73,109 @@
           "howdi": {
             "domain": "default",
             "intent": "greetings.hello"
+          },
+          "is,up,what": {
+            "domain": "default",
+            "intent": "greetings.hello"
+          },
+          "sup": {
+            "domain": "default",
+            "intent": "greetings.hello"
+          },
+          "boo,hey": {
+            "domain": "default",
+            "intent": "greetings.hello"
+          },
+          "start,worri": {
+            "domain": "default",
+            "intent": "worrytree.started"
+          },
+          "start,worrytre": {
+            "domain": "default",
+            "intent": "worrytree.started"
+          },
+          "start,tree,worri": {
+            "domain": "default",
+            "intent": "worrytree.started"
+          },
+          "is,my,worri": {
+            "domain": "default",
+            "intent": "worrytree.userWorry"
+          },
+          "about,am,i,worri": {
+            "domain": "default",
+            "intent": "worrytree.userWorry"
+          },
+          "is,my,this,worri": {
+            "domain": "default",
+            "intent": "worrytree.userWorry"
+          },
+          "no,tackl,worri": {
+            "domain": "default",
+            "intent": "worrytree.noTackleWorry"
+          },
+          "nope,tackl,worri": {
+            "domain": "default",
+            "intent": "worrytree.noTackleWorry"
+          },
+          "ca,i,not,tackl,worri": {
+            "domain": "default",
+            "intent": "worrytree.noTackleWorry"
+          },
+          "tackl,worri,yes": {
+            "domain": "default",
+            "intent": "worrytree.yesTackleWorry"
+          },
+          "tackl,worri,yup": {
+            "domain": "default",
+            "intent": "worrytree.yesTackleWorry"
+          },
+          "can,i,tackl,worri": {
+            "domain": "default",
+            "intent": "worrytree.yesTackleWorry"
+          },
+          "can,i,tackl,worri,yes": {
+            "domain": "default",
+            "intent": "worrytree.yesTackleWorry"
+          },
+          "now,tackl,time,worri": {
+            "domain": "default",
+            "intent": "worrytree.nowTackleWorry"
+          },
+          "now,right,tackl,time,worri": {
+            "domain": "default",
+            "intent": "worrytree.nowTackleWorry"
+          },
+          "tackl,time,worri,yes": {
+            "domain": "default",
+            "intent": "worrytree.nowTackleWorry"
+          },
+          "tackl,time,worri,yup": {
+            "domain": "default",
+            "intent": "worrytree.nowTackleWorry"
+          },
+          "no,tackl,time,worri": {
+            "domain": "default",
+            "intent": "worrytree.laterTackleWorry"
+          },
+          "nope,tackl,time,worri": {
+            "domain": "default",
+            "intent": "worrytree.laterTackleWorry"
+          },
+          "later,tackl,time,worri": {
+            "domain": "default",
+            "intent": "worrytree.laterTackleWorry"
           }
         },
         "intentDict": {
           "greetings.bye": "default",
-          "greetings.hello": "default"
+          "greetings.hello": "default",
+          "worrytree.started": "default",
+          "worrytree.userWorry": "default",
+          "worrytree.noTackleWorry": "default",
+          "worrytree.yesTackleWorry": "default",
+          "worrytree.nowTackleWorry": "default",
+          "worrytree.laterTackleWorry": "default"
         },
         "useStemDict": true,
         "domains": {
@@ -123,6 +229,13 @@
                 "intent": "greetings.bye",
                 "tokens": [
                   "bye",
+                  "bitch"
+                ]
+              },
+              {
+                "intent": "greetings.bye",
+                "tokens": [
+                  "bye",
                   "for",
                   "now"
                 ]
@@ -133,6 +246,13 @@
                   "i",
                   "must",
                   "go"
+                ]
+              },
+              {
+                "intent": "greetings.bye",
+                "tokens": [
+                  "tah",
+                  "tah"
                 ]
               },
               {
@@ -152,25 +272,260 @@
                 "tokens": [
                   "howdi"
                 ]
+              },
+              {
+                "intent": "greetings.hello",
+                "tokens": [
+                  "what",
+                  "is",
+                  "up"
+                ]
+              },
+              {
+                "intent": "greetings.hello",
+                "tokens": [
+                  "sup"
+                ]
+              },
+              {
+                "intent": "greetings.hello",
+                "tokens": [
+                  "hey",
+                  "boo"
+                ]
+              },
+              {
+                "intent": "worrytree.started",
+                "tokens": [
+                  "start",
+                  "worri"
+                ]
+              },
+              {
+                "intent": "worrytree.started",
+                "tokens": [
+                  "worri",
+                  "start"
+                ]
+              },
+              {
+                "intent": "worrytree.started",
+                "tokens": [
+                  "start",
+                  "worrytre"
+                ]
+              },
+              {
+                "intent": "worrytree.started",
+                "tokens": [
+                  "start",
+                  "worri",
+                  "tree"
+                ]
+              },
+              {
+                "intent": "worrytree.started",
+                "tokens": [
+                  "worri",
+                  "tree",
+                  "start"
+                ]
+              },
+              {
+                "intent": "worrytree.userWorry",
+                "tokens": [
+                  "my",
+                  "worri",
+                  "is"
+                ]
+              },
+              {
+                "intent": "worrytree.userWorry",
+                "tokens": [
+                  "i",
+                  "am",
+                  "worri",
+                  "about"
+                ]
+              },
+              {
+                "intent": "worrytree.userWorry",
+                "tokens": [
+                  "this",
+                  "is",
+                  "my",
+                  "worri"
+                ]
+              },
+              {
+                "intent": "worrytree.noTackleWorry",
+                "tokens": [
+                  "tackl",
+                  "worri",
+                  "no"
+                ]
+              },
+              {
+                "intent": "worrytree.noTackleWorry",
+                "tokens": [
+                  "tackl",
+                  "worri",
+                  "nope"
+                ]
+              },
+              {
+                "intent": "worrytree.noTackleWorry",
+                "tokens": [
+                  "tackl",
+                  "worri",
+                  "i",
+                  "ca",
+                  "not"
+                ]
+              },
+              {
+                "intent": "worrytree.yesTackleWorry",
+                "tokens": [
+                  "tackl",
+                  "worri",
+                  "yes"
+                ]
+              },
+              {
+                "intent": "worrytree.yesTackleWorry",
+                "tokens": [
+                  "tackl",
+                  "worri",
+                  "yup"
+                ]
+              },
+              {
+                "intent": "worrytree.yesTackleWorry",
+                "tokens": [
+                  "tackl",
+                  "worri",
+                  "i",
+                  "can"
+                ]
+              },
+              {
+                "intent": "worrytree.yesTackleWorry",
+                "tokens": [
+                  "tackl",
+                  "worri",
+                  "yes",
+                  "i",
+                  "can"
+                ]
+              },
+              {
+                "intent": "worrytree.nowTackleWorry",
+                "tokens": [
+                  "time",
+                  "tackl",
+                  "worri",
+                  "now"
+                ]
+              },
+              {
+                "intent": "worrytree.nowTackleWorry",
+                "tokens": [
+                  "time",
+                  "tackl",
+                  "worri",
+                  "right",
+                  "now"
+                ]
+              },
+              {
+                "intent": "worrytree.nowTackleWorry",
+                "tokens": [
+                  "time",
+                  "tackl",
+                  "worri",
+                  "yes"
+                ]
+              },
+              {
+                "intent": "worrytree.nowTackleWorry",
+                "tokens": [
+                  "time",
+                  "tackl",
+                  "worri",
+                  "yup"
+                ]
+              },
+              {
+                "intent": "worrytree.laterTackleWorry",
+                "tokens": [
+                  "time",
+                  "tackl",
+                  "worri",
+                  "no"
+                ]
+              },
+              {
+                "intent": "worrytree.laterTackleWorry",
+                "tokens": [
+                  "time",
+                  "tackl",
+                  "worri",
+                  "nope"
+                ]
+              },
+              {
+                "intent": "worrytree.laterTackleWorry",
+                "tokens": [
+                  "time",
+                  "tackl",
+                  "worri",
+                  "later"
+                ]
               }
             ],
             "features": {
               "goodby": 1,
               "for": 2,
-              "now": 2,
-              "bye": 3,
+              "now": 4,
+              "bye": 4,
               "take": 1,
               "care": 1,
               "okay": 1,
               "see": 1,
               "you": 1,
-              "later": 1,
-              "i": 1,
+              "later": 2,
+              "bitch": 1,
+              "i": 5,
               "must": 1,
               "go": 1,
+              "tah": 2,
               "hello": 1,
               "hi": 1,
-              "howdi": 1
+              "howdi": 1,
+              "what": 1,
+              "is": 3,
+              "up": 1,
+              "sup": 1,
+              "hey": 1,
+              "boo": 1,
+              "start": 5,
+              "worri": 21,
+              "worrytre": 1,
+              "tree": 2,
+              "my": 2,
+              "am": 1,
+              "about": 1,
+              "this": 1,
+              "tackl": 14,
+              "no": 2,
+              "nope": 2,
+              "ca": 1,
+              "not": 1,
+              "yes": 3,
+              "yup": 2,
+              "can": 2,
+              "time": 7,
+              "right": 1
             },
             "isEditing": false,
             "className": "BrainNLU",
@@ -195,8 +550,8 @@
               "labels": [],
               "network": {
                 "sizes": [
-                  17,
-                  3
+                  43,
+                  9
                 ],
                 "layers": [
                   {
@@ -210,79 +565,450 @@
                     "see": {},
                     "you": {},
                     "later": {},
+                    "bitch": {},
                     "i": {},
                     "must": {},
                     "go": {},
+                    "tah": {},
                     "hello": {},
                     "hi": {},
                     "howdi": {},
+                    "what": {},
+                    "is": {},
+                    "up": {},
+                    "sup": {},
+                    "hey": {},
+                    "boo": {},
+                    "start": {},
+                    "worri": {},
+                    "worrytre": {},
+                    "tree": {},
+                    "my": {},
+                    "am": {},
+                    "about": {},
+                    "this": {},
+                    "tackl": {},
+                    "no": {},
+                    "nope": {},
+                    "ca": {},
+                    "not": {},
+                    "yes": {},
+                    "yup": {},
+                    "can": {},
+                    "time": {},
+                    "right": {},
                     "nonefeature": {}
                   },
                   {
                     "greetings.bye": {
-                      "bias": 2.153381865,
+                      "bias": 2.760702443,
                       "weights": {
-                        "goodby": 3.35956955,
-                        "for": 3.454226494,
-                        "now": 3.454226494,
-                        "bye": 3.496789217,
-                        "take": 3.402131557,
-                        "care": 3.402131557,
-                        "okay": 2.5845263,
-                        "see": 2.5845263,
-                        "you": 2.5845263,
-                        "later": 2.5845263,
-                        "i": 3.447614431,
-                        "must": 3.447614431,
-                        "go": 3.447614431,
-                        "hello": -2.155017138,
-                        "hi": -2.148940086,
-                        "howdi": -2.142019272,
-                        "nonefeature": -2.133960485
+                        "goodby": 4.9427104,
+                        "for": 2.691170692,
+                        "now": 2.105298996,
+                        "bye": 4.942927361,
+                        "take": 2.398171425,
+                        "care": 2.398171425,
+                        "okay": 2.463950396,
+                        "see": 2.463950396,
+                        "you": 2.463950396,
+                        "later": 2.347441673,
+                        "bitch": 4.796272755,
+                        "i": 2.263306856,
+                        "must": 3.737994194,
+                        "go": 3.737994194,
+                        "tah": 9.739302635,
+                        "hello": -2.760697603,
+                        "hi": -2.760696411,
+                        "howdi": -2.760694504,
+                        "what": -0.865625501,
+                        "is": -1.029452085,
+                        "up": -0.865625501,
+                        "sup": -2.76069212,
+                        "hey": -1.380350351,
+                        "boo": -1.380350351,
+                        "start": -1.748627067,
+                        "worri": -3.243863344,
+                        "worrytre": -1.012073636,
+                        "tree": -0.22084713,
+                        "my": -0.163829133,
+                        "am": -0.890072942,
+                        "about": -0.890072942,
+                        "this": -0.044571716,
+                        "tackl": -1.453411937,
+                        "no": -0.08643759,
+                        "nope": -0.065465607,
+                        "ca": -0.257879138,
+                        "not": -0.257879138,
+                        "yes": -0.110228367,
+                        "yup": -0.000079165,
+                        "can": -0.326733798,
+                        "time": -0.702380598,
+                        "right": -0.199602619,
+                        "nonefeature": -2.760686398
                       }
                     },
                     "greetings.hello": {
-                      "bias": 5.165044902,
+                      "bias": 5.296345276,
                       "weights": {
-                        "goodby": -1.468481302,
-                        "for": -1.845200539,
-                        "now": -1.845200539,
-                        "bye": -1.970536232,
-                        "take": -1.593817234,
-                        "care": -1.593817234,
-                        "okay": -1.290057659,
-                        "see": -1.290057659,
-                        "you": -1.290057659,
-                        "later": -1.290057659,
-                        "i": -1.7189641,
-                        "must": -1.7189641,
-                        "go": -1.7189641,
-                        "hello": 7.26117897,
-                        "hi": 7.265647411,
-                        "howdi": 7.237568855,
-                        "nonefeature": -4.979157925
+                        "goodby": -1.605386257,
+                        "for": -1.838427544,
+                        "now": -1.853283644,
+                        "bye": -3.319146633,
+                        "take": -1.108472228,
+                        "care": -1.108472228,
+                        "okay": -1.323932767,
+                        "see": -1.323932767,
+                        "you": -1.323932767,
+                        "later": -1.32534337,
+                        "bitch": -1.977632761,
+                        "i": -1.963355541,
+                        "must": -1.666808367,
+                        "go": -1.666808367,
+                        "tah": -5.296339989,
+                        "hello": 7.203654289,
+                        "hi": 7.203652859,
+                        "howdi": 7.203651428,
+                        "what": 3.08091259,
+                        "is": 1.041830659,
+                        "up": 3.08091259,
+                        "sup": 7.203650475,
+                        "hey": 3.601826429,
+                        "boo": 3.601826429,
+                        "start": -3.233701468,
+                        "worri": -4.321014881,
+                        "worrytre": -2.075740337,
+                        "tree": -0.285867214,
+                        "my": -2.039085388,
+                        "am": -0.27062577,
+                        "about": -0.27062577,
+                        "this": -0.567976117,
+                        "tackl": -0.853339076,
+                        "no": -0.255837202,
+                        "nope": -0.21214816,
+                        "ca": -0.025921306,
+                        "not": -0.025921306,
+                        "yes": -0.182266742,
+                        "yup": -0.160899147,
+                        "time": -0.05984344,
+                        "right": -0.004311842,
+                        "nonefeature": -5.296339512
+                      }
+                    },
+                    "worrytree.started": {
+                      "bias": 0.462506172,
+                      "weights": {
+                        "goodby": -0.1754511,
+                        "for": -0.21781221,
+                        "now": -0.381138593,
+                        "bye": -0.444198191,
+                        "take": -0.188732877,
+                        "care": -0.188732877,
+                        "okay": -0.185303405,
+                        "see": -0.185303405,
+                        "you": -0.185303405,
+                        "later": -0.225721329,
+                        "bitch": -0.213104174,
+                        "i": -1.083310604,
+                        "tah": -0.479378819,
+                        "hello": -0.475495696,
+                        "hi": -0.472633332,
+                        "howdi": -0.470534682,
+                        "is": -1.441516757,
+                        "sup": -0.468963414,
+                        "hey": -0.251609087,
+                        "boo": -0.251609087,
+                        "start": 9.616947174,
+                        "worri": 2.42052865,
+                        "worrytre": 2.420555115,
+                        "tree": 0.000020699,
+                        "my": -1.441516757,
+                        "am": -0.899861872,
+                        "about": -0.899861872,
+                        "this": -0.461155206,
+                        "tackl": -2.434464693,
+                        "no": -0.624282598,
+                        "nope": -0.525856793,
+                        "ca": -0.183450595,
+                        "not": -0.183450595,
+                        "yes": -0.448569894,
+                        "yup": -0.448568463,
+                        "time": -0.222848386,
+                        "right": -0.049140535,
+                        "nonefeature": -0.492499292
+                      }
+                    },
+                    "worrytree.userWorry": {
+                      "bias": -0.223217652,
+                      "weights": {
+                        "goodby": -0.10821832,
+                        "for": -0.145181388,
+                        "now": -0.148680508,
+                        "bye": -0.233379722,
+                        "take": -0.099103361,
+                        "care": -0.099103361,
+                        "okay": -0.10012953,
+                        "see": -0.10012953,
+                        "you": -0.10012953,
+                        "later": -0.10057281,
+                        "bitch": -0.097313285,
+                        "i": 1.512719154,
+                        "must": -0.670658052,
+                        "go": -0.670658052,
+                        "tah": -0.126845047,
+                        "hello": -0.121068478,
+                        "hi": -0.115546912,
+                        "howdi": -0.110269599,
+                        "what": -1.809576392,
+                        "is": 3.842483759,
+                        "up": -1.809576392,
+                        "sup": -0.057607632,
+                        "hey": -0.045404527,
+                        "boo": -0.045404527,
+                        "start": -3.004264355,
+                        "worri": 3.227570534,
+                        "tree": -0.572137833,
+                        "my": 5.652061939,
+                        "am": 3.991429567,
+                        "about": 3.991429567,
+                        "this": 0.001724023,
+                        "tackl": -3.411652327,
+                        "no": -0.509183526,
+                        "nope": -0.511007369,
+                        "ca": -0.702622116,
+                        "not": -0.702622116,
+                        "yes": -0.534322977,
+                        "yup": -0.266025037,
+                        "can": -1.105424047,
+                        "time": -0.003942385,
+                        "nonefeature": -0.175291851
+                      }
+                    },
+                    "worrytree.noTackleWorry": {
+                      "bias": 0.125740273,
+                      "weights": {
+                        "now": -1.011874914,
+                        "bye": -0.076946966,
+                        "take": -0.028153729,
+                        "care": -0.028153729,
+                        "okay": -0.031574093,
+                        "see": -0.031574093,
+                        "you": -0.031574093,
+                        "later": -0.031574093,
+                        "bitch": -0.048793461,
+                        "i": -0.756273746,
+                        "must": -0.101226307,
+                        "go": -0.101226307,
+                        "tah": -0.125740111,
+                        "hello": -0.125740051,
+                        "hi": -0.125739917,
+                        "howdi": -0.125739783,
+                        "what": -0.007911427,
+                        "is": -0.710050285,
+                        "up": -0.007911427,
+                        "sup": -0.125739619,
+                        "hey": -0.06287007,
+                        "boo": -0.06287007,
+                        "start": -1.412189603,
+                        "worri": 1.286453366,
+                        "tree": -0.161620215,
+                        "my": -0.702138782,
+                        "am": -0.327959657,
+                        "about": -0.327959657,
+                        "this": -0.10985776,
+                        "tackl": 3.728758097,
+                        "no": 7.359005928,
+                        "nope": 7.359004974,
+                        "ca": 4.057656288,
+                        "not": 4.057656288,
+                        "yes": -5.140954018,
+                        "yup": -5.140952587,
+                        "can": -4.384687424,
+                        "time": -12.499947548,
+                        "right": -0.310705006,
+                        "nonefeature": -0.125738963
+                      }
+                    },
+                    "worrytree.yesTackleWorry": {
+                      "bias": 0.199232443,
+                      "weights": {
+                        "now": -1.942471027,
+                        "bye": -0.131386474,
+                        "take": -0.065604351,
+                        "care": -0.065604351,
+                        "okay": -0.062073883,
+                        "see": -0.062073883,
+                        "you": -0.062073883,
+                        "later": -0.085760698,
+                        "bitch": -0.065782137,
+                        "i": -1.99965477,
+                        "must": -0.604835212,
+                        "go": -0.604835212,
+                        "tah": -0.193160713,
+                        "hello": -0.192828819,
+                        "hi": -0.192495123,
+                        "howdi": -0.192159638,
+                        "what": -0.025910407,
+                        "is": -1.331597447,
+                        "up": -0.025910407,
+                        "sup": -0.19182235,
+                        "hey": -0.097372271,
+                        "boo": -0.097372271,
+                        "start": -2.64187026,
+                        "worri": 2.488642216,
+                        "tree": -0.298407406,
+                        "my": -1.305687189,
+                        "am": -0.941191435,
+                        "about": -0.941191435,
+                        "this": -0.10140837,
+                        "tackl": 7.377391815,
+                        "no": -9.810777664,
+                        "nope": -9.77375412,
+                        "ca": -3.938261986,
+                        "not": -3.938261986,
+                        "yes": 1.710934043,
+                        "yup": 2.672502756,
+                        "can": 3.484639883,
+                        "time": -12.89036274,
+                        "right": -0.846090496,
+                        "nonefeature": -0.193822429
+                      }
+                    },
+                    "worrytree.nowTackleWorry": {
+                      "bias": -2.430831018,
+                      "weights": {
+                        "goodby": -1.545990944,
+                        "for": -2.954918385,
+                        "now": 5.560548782,
+                        "bye": -1.451459527,
+                        "take": -0.022524783,
+                        "care": -0.022524783,
+                        "later": -6.937861919,
+                        "bitch": -0.020007044,
+                        "i": -0.915755033,
+                        "must": -0.0121189,
+                        "go": -0.0121189,
+                        "tah": -0.011441597,
+                        "hello": -0.010802145,
+                        "hi": -0.010198433,
+                        "howdi": -0.009628461,
+                        "what": -0.009090343,
+                        "is": -0.094625846,
+                        "up": -0.009090343,
+                        "sup": -0.0085823,
+                        "hey": -0.00810265,
+                        "boo": -0.00810265,
+                        "start": -0.244446278,
+                        "worri": -1.74864018,
+                        "tree": -0.0832569,
+                        "my": -0.085535496,
+                        "am": -0.036661923,
+                        "about": -0.036661923,
+                        "this": -0.028791374,
+                        "tackl": -1.381997466,
+                        "no": -6.937971115,
+                        "nope": -6.937950611,
+                        "ca": -0.20704712,
+                        "not": -0.20704712,
+                        "yes": 5.561687469,
+                        "yup": 5.561694145,
+                        "can": -0.65992707,
+                        "time": 12.499464989,
+                        "right": 0.002234191,
+                        "nonefeature": -0.035595946
+                      }
+                    },
+                    "worrytree.laterTackleWorry": {
+                      "bias": -2.579967898,
+                      "weights": {
+                        "goodby": -0.134133473,
+                        "for": -0.189585716,
+                        "now": -6.515838623,
+                        "bye": -0.278161228,
+                        "take": -0.126636997,
+                        "care": -0.126636997,
+                        "okay": -1.139574289,
+                        "see": -1.139574289,
+                        "you": -1.139574289,
+                        "later": 5.984145164,
+                        "bitch": -0.096072003,
+                        "i": -0.766613007,
+                        "must": -0.098219857,
+                        "go": -0.098219857,
+                        "tah": -0.107795723,
+                        "hello": -0.102350757,
+                        "hi": -0.097177751,
+                        "howdi": -0.092263289,
+                        "what": -0.073674358,
+                        "is": -0.549248636,
+                        "up": -0.073674358,
+                        "sup": -0.083936915,
+                        "hey": -0.072347745,
+                        "boo": -0.072347745,
+                        "start": -1.312016368,
+                        "worri": -2.722022533,
+                        "tree": -0.434183806,
+                        "my": -0.475574285,
+                        "am": -0.252430946,
+                        "about": -0.252430946,
+                        "this": -0.159970105,
+                        "tackl": -0.682002068,
+                        "no": 5.984065533,
+                        "nope": 5.98405838,
+                        "ca": -0.399214685,
+                        "not": -0.399214685,
+                        "yes": -6.515810966,
+                        "yup": -6.515769958,
+                        "can": -0.016747519,
+                        "time": 12.499871254,
+                        "right": -1.49794066,
+                        "nonefeature": -0.158278555
                       }
                     },
                     "None": {
-                      "bias": 1.728360546,
+                      "bias": 1.101457924,
                       "weights": {
-                        "goodby": -0.487468362,
-                        "for": -0.623472869,
-                        "now": -0.623472869,
-                        "bye": -0.668678343,
-                        "take": -0.532673955,
-                        "care": -0.532673955,
-                        "okay": -0.433729917,
-                        "see": -0.433729917,
-                        "you": -0.433729917,
-                        "later": -0.433729917,
-                        "i": -0.577848256,
-                        "must": -0.577848256,
-                        "go": -0.577848256,
-                        "hello": -1.656210303,
-                        "hi": -1.642110229,
-                        "howdi": -1.6266855,
-                        "nonefeature": 10.5390625
+                        "goodby": -0.337580413,
+                        "for": -0.392095387,
+                        "now": -0.392095387,
+                        "bye": -0.705859303,
+                        "take": -0.242961749,
+                        "care": -0.242961749,
+                        "okay": -0.280912101,
+                        "see": -0.280912101,
+                        "you": -0.280912101,
+                        "later": -0.280912101,
+                        "bitch": -0.408382714,
+                        "i": -0.397325128,
+                        "must": -0.365071148,
+                        "go": -0.365071148,
+                        "tah": -1.101460338,
+                        "hello": -1.101456881,
+                        "hi": -1.101456642,
+                        "howdi": -1.101456404,
+                        "what": -0.348316222,
+                        "is": -0.404825062,
+                        "up": -0.348316222,
+                        "sup": -1.101455688,
+                        "hey": -0.5507285,
+                        "boo": -0.5507285,
+                        "start": -0.641708374,
+                        "worri": -0.64012301,
+                        "worrytre": -0.459748715,
+                        "tree": -0.035454437,
+                        "my": -0.056509208,
+                        "am": -0.032004621,
+                        "about": -0.032004621,
+                        "this": -0.015492934,
+                        "tackl": -0.36964944,
+                        "no": -0.094031222,
+                        "nope": -0.091998845,
+                        "ca": -0.000250572,
+                        "not": -0.000250572,
+                        "yes": -0.091684908,
+                        "yup": -0.091684856,
+                        "time": -0.021210091,
+                        "nonefeature": 11.398533821
                       }
                     }
                   }
@@ -319,11 +1045,19 @@
       ],
       [
         "en",
+        "bye bitch"
+      ],
+      [
+        "en",
         "bye for now"
       ],
       [
         "en",
         "i must go"
+      ],
+      [
+        "en",
+        "tah tah"
       ],
       [
         "en",
@@ -336,6 +1070,106 @@
       [
         "en",
         "howdy"
+      ],
+      [
+        "en",
+        "what's up"
+      ],
+      [
+        "en",
+        "sup"
+      ],
+      [
+        "en",
+        "hey boo"
+      ],
+      [
+        "en",
+        "start worry"
+      ],
+      [
+        "en",
+        "worry start"
+      ],
+      [
+        "en",
+        "start worrytree"
+      ],
+      [
+        "en",
+        "start worry tree"
+      ],
+      [
+        "en",
+        "worry tree start"
+      ],
+      [
+        "en",
+        "my worry is"
+      ],
+      [
+        "en",
+        "I'm worried about"
+      ],
+      [
+        "en",
+        "This is my worry"
+      ],
+      [
+        "en",
+        "tackle worry no"
+      ],
+      [
+        "en",
+        "tackle worry nope"
+      ],
+      [
+        "en",
+        "tackle worry I can't"
+      ],
+      [
+        "en",
+        "tackle worry yes"
+      ],
+      [
+        "en",
+        "tackle worry yup"
+      ],
+      [
+        "en",
+        "tackle worry I can"
+      ],
+      [
+        "en",
+        "tackle worry yes I can"
+      ],
+      [
+        "en",
+        "timing tackle worry now"
+      ],
+      [
+        "en",
+        "timing tackle worry right now"
+      ],
+      [
+        "en",
+        "timing tackle worry yes"
+      ],
+      [
+        "en",
+        "timing tackle worry yup"
+      ],
+      [
+        "en",
+        "timing tackle worry no"
+      ],
+      [
+        "en",
+        "timing tackle worry nope"
+      ],
+      [
+        "en",
+        "timing tackle worry later"
       ]
     ]
   },
@@ -368,7 +1202,16 @@
           "response": "Till next time"
         },
         {
-          "response": "see you soon!"
+          "response": "Byeeeee!"
+        },
+        {
+          "response": "Bye!"
+        },
+        {
+          "response": "Alright then!"
+        },
+        {
+          "response": "See you soon!"
         }
       ],
       "greetings.hello": [
@@ -376,7 +1219,40 @@
           "response": "Hey there!"
         },
         {
-          "response": "Greetings!"
+          "response": "Hi!"
+        },
+        {
+          "response": "What's up"
+        }
+      ],
+      "worrytree.started": [
+        {
+          "response": "What are you worried about?"
+        }
+      ],
+      "worrytree.userWorry": [
+        {
+          "response": "Is this worry something I can do something about?"
+        }
+      ],
+      "worrytree.noTackleWorry": [
+        {
+          "response": "Let this worry go and change your focus!"
+        }
+      ],
+      "worrytree.yesTackleWorry": [
+        {
+          "response": "Is this something you can do now or later?"
+        }
+      ],
+      "worrytree.nowTackleWorry": [
+        {
+          "response": "Do it! And then change your focus."
+        }
+      ],
+      "worrytree.laterTackleWorry": [
+        {
+          "response": "Schedule it! And then change your focus."
         }
       ]
     }
