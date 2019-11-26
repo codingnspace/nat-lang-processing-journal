@@ -9,6 +9,8 @@
     "@fortawesome/react-fontawesome": "^0.1.7",
     "axios": "^0.19.0",
     "calendar-dates": "^2.6.1",
+    "d3": "^5.14.2",
+    "d3-geo": "^1.11.9",
     "import": "0.0.6",
     "lodash": "^4.17.15",
     "react": "^16.11.0",
