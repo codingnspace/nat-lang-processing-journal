@@ -12,7 +12,7 @@ import IconLog from './components/IconLog';
 import YearInPixels from './components/YearInPixels';
 import WorryTree from './components/WorryTree';
 import Breath from './components/Breath';
-// import UsMap from './components/UsMap';
+import UsMap from './components/UsMap';
 
 function App() {
 
@@ -31,7 +31,7 @@ function App() {
         <Route path="/year-in-pixels" render={() => <YearInPixels />} />
         <Route path="/worry-tree" render={() => <WorryTree />} />
         <Route path="/breath" render={() => <Breath />} />
-        {/* <Route path="/us-map" render={() => <UsMap />} /> */}
+        <Route path="/us-map" render={() => <UsMap />} />
       </Switch>
     </main>
    </Router>
