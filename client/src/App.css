@@ -245,3 +245,15 @@ div.tooltip {
   0%   { r: 80; }
   100% { r: 180; }
 }
+
+.BookLog .book {
+  display: flex;
+  margin-bottom: 20px;
+  justify-content: space-between;
+}
+
+.BookLog .book h3,
+.BookLog .book h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
