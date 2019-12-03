@@ -40,7 +40,7 @@ export default class UsMap extends React.Component {
             .style("opacity", 0);
 
         // Load in my states data!
-        d3.csv("./states-lived.csv", function (data) {
+        d3.json("test.json", function (data) {
             color.domain([0, 1, 2, 3]); // setting the range of the input data
 
             // Load GeoJSON data and merge with states data
