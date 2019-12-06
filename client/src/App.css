@@ -257,3 +257,18 @@ div.tooltip {
   margin-top: 0;
   margin-bottom: 0;
 }
+
+.book--full div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.book--full picture {
+  width: 300px;
+  height: auto;
+}
+
+.book--full picture img {
+  width: 300px;
+  height: 100%;
+}

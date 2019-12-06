@@ -13,7 +13,7 @@ import YearInPixels from './components/YearInPixels';
 import WorryTree from './components/WorryTree';
 import Breath from './components/Breath';
 import UsMap from './components/UsMap';
-import BookLog from './components/BookLog';
+import BookLog, {FullBook} from './components/BookLog';
 
 const sampleBookData = [
   {
@@ -59,6 +59,7 @@ function App() {
         <Route path="/breath" render={() => <Breath />} />
         <Route path="/us-map" render={() => <UsMap />} />
         <Route path="/book-log" render={() => <BookLog books={sampleBookData} />} />
+        <Route path="/book-details" render={() => <FullBook book={sampleBookData[0]} />} />
       </Switch>
     </main>
    </Router>
