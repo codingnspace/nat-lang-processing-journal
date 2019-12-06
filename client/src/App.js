@@ -13,6 +13,7 @@ import YearInPixels from './components/YearInPixels';
 import WorryTree from './components/WorryTree';
 import Breath from './components/Breath';
 import UsMap from './components/UsMap';
+import DonutChart from './components/DonutChart';
 import BookLog, {FullBook} from './components/BookLog';
 
 const sampleBookData = [
@@ -58,6 +59,7 @@ function App() {
         <Route path="/worry-tree" render={() => <WorryTree />} />
         <Route path="/breath" render={() => <Breath />} />
         <Route path="/us-map" render={() => <UsMap />} />
+        <Route path="/donut-chart" render={() => <DonutChart />} />
         <Route path="/book-log" render={() => <BookLog books={sampleBookData} />} >
         </Route>
         <Route path="/book-details/:id" render={() => <FullBook book={sampleBookData[0]} />} />
