@@ -4,7 +4,6 @@ import {Link} from "react-router-dom"
 import './ChatBox.css'
 
 export const FullBook = ({book}) => {
-    console.log('full book')
     const notes = book.notes.map(note => {
         return (
             <p>{note}</p>
@@ -13,6 +12,9 @@ export const FullBook = ({book}) => {
     return (
         <article className="book--full">
             <h3>Book Details</h3>
+            <h4>
+                <Link to='/book-log'>Back to Full Book Log</Link>
+            </h4>
            <div>
                 <picture>
                     <img src={book.book_cover} />
@@ -30,10 +32,10 @@ export const FullBook = ({book}) => {
 
 export default class BookLog extends React.Component  {
     render() {
-        console.log('book log')
         const { books } = this.props
         const bookLog = books.map(book => {
             return (
+                 <Link to={`/book-details/${book.id}`}>
                     <article className="book">
                         <div>
                             <h3 className="book-title">{book.title}</h3>
@@ -42,6 +44,7 @@ export default class BookLog extends React.Component  {
                         <div className="book-genre">{book.genre}</div>
                         <div className="book-rating">{book.rating}</div>
                     </article>
+                 </Link>
             )
         })
         return (

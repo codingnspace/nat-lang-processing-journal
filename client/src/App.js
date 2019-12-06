@@ -58,8 +58,9 @@ function App() {
         <Route path="/worry-tree" render={() => <WorryTree />} />
         <Route path="/breath" render={() => <Breath />} />
         <Route path="/us-map" render={() => <UsMap />} />
-        <Route path="/book-log" render={() => <BookLog books={sampleBookData} />} />
-        <Route path="/book-details" render={() => <FullBook book={sampleBookData[0]} />} />
+        <Route path="/book-log" render={() => <BookLog books={sampleBookData} />} >
+        </Route>
+        <Route path="/book-details/:id" render={() => <FullBook book={sampleBookData[0]} />} />
       </Switch>
     </main>
    </Router>
