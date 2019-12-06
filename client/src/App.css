@@ -272,3 +272,21 @@ div.tooltip {
   width: 300px;
   height: 100%;
 }
+
+.TextImageBox.sunshine {
+  background-image: url("https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fstatic8.depositphotos.com%2F1329518%2F843%2Fv%2F950%2Fdepositphotos_8433220-stock-illustration-seamless-sunshine-background.jpg&f=1&nofb=1");
+}
+
+.TextImageBox {
+  border: 1px solid black;
+  background-size: cover;
+  padding: 30px;
+  text-align: center;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.TextImageBox.blue {
+  background-color: blue;
+}
+
