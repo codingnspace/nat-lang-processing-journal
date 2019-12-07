@@ -80,6 +80,39 @@ manager.addAnswer('en', 'worrytree.yesTackleWorry', "Great! Is this something yo
 manager.addAnswer('en', 'worrytree.nowTackleWorry', "Do it! And then change your focus.");
 manager.addAnswer('en', 'worrytree.laterTackleWorry', "Schedule it! And then change your focus.");
 
+// Food Tracker
+manager.addDocument('en', "start food tracker", 'foodTracker.started');
+manager.addDocument('en', "food tracker start", 'foodTracker.started');
+manager.addDocument('en', "I just ate", 'foodTracker.userFood');
+manager.addDocument('en', "food healthy no", 'foodTracker.foodNotHealthy');
+manager.addDocument('en', "food healthy nope", 'foodTracker.foodNotHealthy');
+manager.addDocument('en', "food healthy not at all", 'foodTracker.foodNotHealthy');
+manager.addDocument('en', "food healthy it was not healthy", 'foodTracker.foodNotHealthy');
+manager.addDocument('en', "food healthy it was fatty high carb", 'foodTracker.foodNotHealthy');
+manager.addDocument('en', "food healthy not healthy", 'foodTracker.foodNotHealthy');
+manager.addDocument('en', "food healthy it was high calorie", 'foodTracker.foodNotHealthy');
+manager.addDocument('en', "food healthy yes", 'foodTracker.foodHealthy');
+manager.addDocument('en', "food healthy yup", 'foodTracker.foodHealthy');
+manager.addDocument('en', "food healthy it was healthy", 'foodTracker.foodHealthy');
+manager.addDocument('en', "food healthy yeah", 'foodTracker.foodHealthy');
+manager.addDocument('en', "food healthy confirmed", 'foodTracker.foodHealthy');
+manager.addDocument('en', "food healthy low calorie low carb", 'foodTracker.foodHealthy');
+manager.addDocument('en', "my food motivations", 'foodTracker.foodMotivation');
+
+
+manager.addAnswer('en', 'foodTracker.started', "What did you eat?");
+manager.addAnswer('en', 'foodTracker.started', "Tell me, what have you eaten?");
+manager.addAnswer('en', 'foodTracker.userFood', "Got it. By your personal definition of healthy, would you say that it was healthy?");
+manager.addAnswer('en', 'foodTracker.userFood', "Okay cool. By your personal definition of healthy, would you say that it was healthy?");
+manager.addAnswer('en', 'foodTracker.userFood', "Got it. Do you consider it healthy?");
+manager.addAnswer('en', 'foodTracker.userFood', "Okay cool. Would you say that it was healthy?");
+manager.addAnswer('en', 'foodTracker.foodHealthy', "Great job! What were your motivations for eating: nourishment, fun, mindless or binging?");
+manager.addAnswer('en', 'foodTracker.foodHealthy', "Sweet! What were your motivations for eating: nourishment, fun, mindless or binging?");
+manager.addAnswer('en', 'foodTracker.foodHealthy', "Nice! What were your motivations for eating: nourishment, fun, mindless or binging?");
+manager.addAnswer('en', 'foodTracker.foodNotHealthy', "No worries! What were your motivations for eating: nourishment, fun, mindless or binging?");
+manager.addAnswer('en', 'foodTracker.foodNotHealthy', "Got it. What were your motivations for eating: nourishment, fun, mindless or binging?");
+manager.addAnswer('en', 'foodTracker.foodMotivation', "Got it. And good job on logging a food entry!");
+
 async function train() {
     // Train the model
     await manager.train();

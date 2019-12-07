@@ -16,6 +16,8 @@ import UsMap from './components/UsMap';
 import BookLog, {FullBook} from './components/BookLog';
 import DonutChart from './components/DonutChart';
 import TextImageBox from './components/TextImageBox';
+import FoodTracker from './components/FoodTracker';
+import GratitudeLog from './components/GratitudeLog';
 
 const sampleBookData = [
   {
@@ -65,6 +67,8 @@ function App() {
         <Route path="/book-details/:id" render={() => <FullBook book={sampleBookData[0]} />} />
         <Route path="/donut-chart" render={() => <DonutChart />} />
         <Route path="/text-image-box" render={() => <TextImageBox />} />
+        <Route path="/food-tracker" render={() => <FoodTracker />} />
+        <Route path="/gratitude-log" render={() => <GratitudeLog />} />
       </Switch>
     </main>
    </Router>
