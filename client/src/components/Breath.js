@@ -8,16 +8,19 @@ const Circle = ({size, color, style}) => {
     )
 }
 export default class Breath extends React.Component  {
- 
+    componentDidMount() {
+        const circle = this.refs.breathCircle
+        setInterval(() => {
+                circle && circle.classList.toggle('in')
+        }, 20000);
+    }
     render() {
         return (
             <article className="Breath">
                 <h2>Breath Exercise</h2>
-                    <svg  className="Circle">
-                        <circle  stroke="black" stroke-width="3" fill="red" />
+                    <svg  className="Circle" ref="breathCircle">
+                        <circle  stroke="black" fill="red" />
                     </svg>
-                {/* <Circle size="200" color="red" /> */}
-                {/* <Circle size="400" color="red" /> */}
             </article>
         )
     }

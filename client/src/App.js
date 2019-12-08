@@ -23,6 +23,7 @@ import SelfCareList from './components/SelfcareList';
 import WantsVNeeds from './components/WantsVNeeds';
 import FavoriteQuotes from './components/FavoriteQuotes';
 import CuratedImagery from './components/CuratedImagery';
+import SpendingLog from './components/SpendingLog';
 
 const sampleBookData = [
   {
@@ -48,6 +49,9 @@ const sampleBookData = [
       book_cover: "https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781476777122/year-of-yes-9781476777122_hr.jpg"
   },
 ]
+
+const spendingCategories = ["Food", "Rideshares", "Entertainment", "Travel",
+        "Clothing", "Beauty", "Gifts", "Cafes", "Personal Care", "Other", "Hobbies"]
 
 function App() {
 
@@ -79,6 +83,8 @@ function App() {
         <Route path="/wants-v-needs" render={() => <WantsVNeeds />} />
         <Route path="/fav-quotes" render={() => <FavoriteQuotes />} />
         <Route path="/curated-imagery" render={() => <CuratedImagery />} />
+        <Route path="/spending-log"
+          render={() => <SpendingLog budget="200" categoryOptions={spendingCategories} />} />
       </Switch>
     </main>
    </Router>
