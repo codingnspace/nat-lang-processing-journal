@@ -22,6 +22,7 @@ import BragList from './components/BragList';
 import SelfCareList from './components/SelfcareList';
 import WantsVNeeds from './components/WantsVNeeds';
 import FavoriteQuotes from './components/FavoriteQuotes';
+import CuratedImagery from './components/CuratedImagery';
 
 const sampleBookData = [
   {
@@ -77,6 +78,7 @@ function App() {
         <Route path="/self-care-list" render={() => <SelfCareList />} />
         <Route path="/wants-v-needs" render={() => <WantsVNeeds />} />
         <Route path="/fav-quotes" render={() => <FavoriteQuotes />} />
+        <Route path="/curated-imagery" render={() => <CuratedImagery />} />
       </Switch>
     </main>
    </Router>
