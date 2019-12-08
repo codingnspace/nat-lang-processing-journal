@@ -9,11 +9,10 @@ export default class TextImageBox extends React.Component  {
         })
     }
     render() {
+        const {text} = this.props
         return (
             <article className="TextImageBox">
-                <h2>You Rock! lafsdj;ldf sa;ldkafj ;lkjadfs ;lkj as;lkjdfas lkj;lkjadsda sada
-                    adf s;adl kjadls;kj l;askjd;lfaksj l;kadfsj ;lkjdsaf ;lkjsdl;afj l;kafj sl;kjdas fl;kjadsl ;kjasdf
-                    adsflj;kljdfsa l;kjfasd lkjadfs ;lkjsad 
+                <h2>{text}
                 </h2>
             </article>
         )

@@ -5,48 +5,53 @@ export default class FavoriteQuotes extends React.Component  {
     constructor() {
         super()
         this.state = {
-            listItems: []
+            quotes: []
         }
     }
 
     handleSubmit = (e) => {
         e.preventDefault()
-        const liText = this.refs.newListItemText;
-        const liCategory = this.refs.newListItemCategory;
-        const newLi = {
-            text: liText.value,
-            category: liCategory.value
+        const quoteText = this.refs.newQuoteText;
+        const quoteCategory = this.refs.newQuoteCategory;
+        const quoteSource = this.refs.newQuoteSource;
+        const newQuote = {
+            text: quoteText.value,
+            category: quoteCategory.value,
+            source: quoteSource.value
         }
-        console.log('newLi', newLi)
-        const newLiList = this.state.listItems.concat(newLi)
-        console.log('newLiList', newLiList)
-        this.setState({listItems: newLiList})
-        setTimeout(() => {
-            console.log(this.state.listItems)
-        }, 500)
-        liText.value = ''
-        liCategory.value = ''
+        const newQuoteList = this.state.quotes.concat(newQuote)
+        this.setState({quotes: newQuoteList})
+        
+        quoteText.value = ''
+        quoteCategory.value = ''
+        quoteSource.value = ''
     }
 
 
     render() {
-        const { categoryOptions, title, noCheckmark } = this.props
-        const listItems = this.state.listItems
+        const quotes = this.state.quotes.map(quote => {
+            return <TextImageBox key={quote.text} text={`${quote.text} -- ${quote.source}`} />
+        })
 
-       
+        const options = ['Life', 'Relationships', 'Motivation', 'Courage', 'Work/Grt']
+        .sort()
+        .map(option => {
+            return <option value={option} key={option}>{option}</option>
+    })
         
         return (
             <article>
-                <h3>{title}</h3>
+                <h3>Favorite Quotes</h3>
                 <form onSubmit={this.handleSubmit}>
-                    <input ref="newListItemText" placeholder="Add the next thing..." />
-                    <select ref="newListItemCategory">
+                    <input ref="newQuoteText" placeholder="Add the famous saying..." />
+                    <input ref="newQuoteSource" placeholder="Add who said it..." />
+                    <select ref="newQuoteCategory">
                         <option value="">--Please choose an option--</option>
                         {options}
                     </select>
                     <button type="submit">Add</button>
                 </form>
-                <article>{addedItems}</article>
+                <article>{quotes}</article>
             </article>
         )
     }
