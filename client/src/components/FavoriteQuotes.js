@@ -51,7 +51,7 @@ export default class FavoriteQuotes extends React.Component  {
                     </select>
                     <button type="submit">Add</button>
                 </form>
-                <article>{quotes}</article>
+                <article className="FavoriteQuotes-quotes">{quotes}</article>
             </article>
         )
     }

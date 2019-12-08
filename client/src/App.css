@@ -283,10 +283,26 @@ div.tooltip {
   padding: 30px;
   text-align: center;
   display: inline-block;
-  white-space: nowrap;
 }
 
 .TextImageBox.blue {
   background-color: blue;
 }
+
+.FavoriteQuotes-quotes {
+  display: grid;
+  grid-template-columns: auto;
+}
+
+.FavoriteQuotes-quotes .TextImageBox {
+  display: block;
+}
+
+@media screen and (min-width: 768px) {
+  .FavoriteQuotes-quotes {
+    grid-template-columns: auto auto auto;
+  }
+}
+
+
 
