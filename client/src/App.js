@@ -18,6 +18,10 @@ import DonutChart from './components/DonutChart';
 import TextImageBox from './components/TextImageBox';
 import FoodTracker from './components/FoodTracker';
 import GratitudeLog from './components/GratitudeLog';
+import BragList from './components/BragList';
+import SelfCareList from './components/SelfcareList';
+import WantsVNeeds from './components/WantsVNeeds';
+import FavoriteQuotes from './components/FavoriteQuotes';
 
 const sampleBookData = [
   {
@@ -69,6 +73,10 @@ function App() {
         <Route path="/text-image-box" render={() => <TextImageBox />} />
         <Route path="/food-tracker" render={() => <FoodTracker />} />
         <Route path="/gratitude-log" render={() => <GratitudeLog />} />
+        <Route path="/brag-list" render={() => <BragList />} />
+        <Route path="/self-care-list" render={() => <SelfCareList />} />
+        <Route path="/wants-v-needs" render={() => <WantsVNeeds />} />
+        <Route path="/fav-quotes" render={() => <FavoriteQuotes />} />
       </Switch>
     </main>
    </Router>

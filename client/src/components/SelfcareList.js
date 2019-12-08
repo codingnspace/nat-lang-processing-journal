@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default class BragList extends React.Component  {
+export default class SelfCareList extends React.Component  {
     constructor() {
         super()
         this.state = {
@@ -24,7 +24,7 @@ export default class BragList extends React.Component  {
        
         return (
             <article>
-                <h3>Brag List</h3>
+                <h3>Self Care List</h3>
                 <form onSubmit={this.handleSubmit}>
                     <input ref="newListItemText" placeholder="Add the next thing..." />
                     

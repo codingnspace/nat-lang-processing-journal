@@ -41,17 +41,25 @@ export default class List extends React.Component  {
     }
 
     render() {
-        const { categoryOptions, title } = this.props
+        const { categoryOptions, title, noCheckmark } = this.props
         const listItems = this.state.listItems
         const groupedLisByCategory = groupBy(listItems, 'category')
         const categories = Object.keys(groupedLisByCategory)
         const addedItems = categories.map(cat => {
             const categoryItems = groupedLisByCategory[cat].map(item => {
-                return (
-                <li onClick={this.toggleItemComplete}>
-                    <input type="checkbox"/>{item.text}
-                </li>
-                )
+                if (noCheckmark) {
+                    return (
+                        <li onClick={this.toggleItemComplete}>
+                            {item.text}
+                        </li>
+                    )
+                } else {
+                    return (
+                        <li onClick={this.toggleItemComplete}>
+                            <input type="checkbox"/>{item.text}
+                        </li>
+                        )
+                }
             })
             return (
                 <div>
