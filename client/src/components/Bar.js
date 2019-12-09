@@ -2,12 +2,12 @@ import React from 'react'
 
 export default class Bar extends React.Component  {
     render() {
-        const { progressPercent, current, total } = this.props
+        const { progressPercent, current, total, width, height } = this.props
         return (
             <article>
                 <div className="Bar">
                     <svg width={progressPercent} height="110">
-                        <rect width="100%"
+                        <rect width={"100%"}
                             height="110"
                             style={{fill: 'rgb(0,0,255)', strokeWidth:3, stroke: 'rgb(0,0,0)'}} />
                     </svg>

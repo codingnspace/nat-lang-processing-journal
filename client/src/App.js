@@ -24,6 +24,7 @@ import WantsVNeeds from './components/WantsVNeeds';
 import FavoriteQuotes from './components/FavoriteQuotes';
 import CuratedImagery from './components/CuratedImagery';
 import SpendingLog from './components/SpendingLog';
+import SavingsLog from './components/SavingsLog';
 
 const sampleBookData = [
   {
@@ -85,6 +86,7 @@ function App() {
         <Route path="/curated-imagery" render={() => <CuratedImagery />} />
         <Route path="/spending-log"
           render={() => <SpendingLog budget="200" categoryOptions={spendingCategories} />} />
+        <Route path="/savings-log" render={() => <SavingsLog savingsGoal="1000" />} />
       </Switch>
     </main>
    </Router>
