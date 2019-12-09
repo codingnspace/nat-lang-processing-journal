@@ -333,4 +333,8 @@ div.tooltip {
   margin-bottom: 40px;
 }
 
+.grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
 
