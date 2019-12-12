@@ -26,6 +26,7 @@ import CuratedImagery from './components/CuratedImagery';
 import SpendingLog from './components/SpendingLog';
 import SavingsLog from './components/SavingsLog';
 import FruitVeggies from './components/FruitVeggies';
+import ImportantDates from './components/ImportantDates';
 
 const sampleBookData = [
   {
@@ -89,6 +90,7 @@ function App() {
           render={() => <SpendingLog budget="200" categoryOptions={spendingCategories} />} />
         <Route path="/savings-log" render={() => <SavingsLog savingsGoal="1000" />} />
         <Route path="/fruits-veggies-log" render={() => <FruitVeggies />} />
+        <Route path="/important-dates" render={() => <ImportantDates month={12} year={2019} />} />
       </Switch>
     </main>
    </Router>
