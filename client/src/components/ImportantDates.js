@@ -13,9 +13,9 @@ export default class ImportantDates extends React.Component  {
 
         const newImportantDate = {
             startDay: parseInt(this.refs.startDay.value),
-            startMonth: parseInt(this.refs.startMonth.value),
+            startMonth: this.refs.startMonth.value,
             endDay: parseInt(this.refs.endDay.value),
-            endMonth: parseInt(this.refs.endMonth.value),
+            endMonth: this.refs.endMonth.value,
             text: this.refs.newListItemText.value
         }
         const newListItems = this.state.listItems.concat(newImportantDate)
@@ -25,9 +25,46 @@ export default class ImportantDates extends React.Component  {
         this.refs.newListItemText.value = ''
     }
 
+    handleStartDayChange = (e) => {
+        this.refs.endDay.value = e.target.value
+    }
+
+    affixDate = (day) => {
+        const st = [1, 21,31]
+        const rd = [3, 23]
+        const nd = [2, 22]
+
+        if (st.includes(day)) {
+            return 'st'
+        } else if (rd.includes(day)) {
+            return 'rd'
+        } else if (nd.includes(day)) {
+            return 'nd'
+        } else {
+            return 'th'
+        }
+    }
+
+    displayDate = (date) => {
+        const startDay = date.startDay
+        const startMonth = date.startMonth
+        const endDay = date.endDay
+        const endMonth = date.endMonth
+        console.log(startDay, startMonth, endDay,endMonth)
+        if (startDay === endDay && startMonth === endMonth) {
+           return `${startDay}${this.affixDate(startDay)} ${date.text}` 
+        } else if (startDay !== endDay || startMonth !== endMonth) {
+            if (startMonth === endMonth) {
+                return  `${startDay}${this.affixDate(startDay)} - ${endDay}${this.affixDate(endDay)} ${date.text}` 
+            } else {
+                return  `${startDay}${this.affixDate(startDay)} ${startMonth} - ${endDay}${this.affixDate(endDay)} 
+                ${endMonth}, ${date.text}` 
+            }
+        }
+    }
+
     render() {
         const compare = (a,b) => {
-            console.log(a,b)
             if (a.startDay < b.startDay)
               return -1;
             if (a.startDay > b.startDay)
@@ -37,7 +74,7 @@ export default class ImportantDates extends React.Component  {
         const listItems = this.state.listItems
         .sort(compare)
         .map(importantDate => {
-            return <li>{`${importantDate.startDay} ${importantDate.text}`}</li>
+            return <li>{this.displayDate(importantDate)}</li>
         })
         const date = new Date();
         const currentMonth = date.getMonth();
@@ -64,10 +101,13 @@ export default class ImportantDates extends React.Component  {
                 <h3>Important Dates</h3>
                 <form onSubmit={this.handleSubmit}>
                     <input ref="newListItemText" placeholder="Add the next thing..." />
-                    <select defaultValue={monthsArr[currentMonth]} ref="startMonth">
+                    <select defaultValue={monthsArr[currentMonth]}
+                        ref="startMonth"
+                        disabled
+                        onChange={this.handleChange}>
                         {months}
                     </select>
-                    <select ref="startDay">
+                    <select ref="startDay" onChange={this.handleStartDayChange}>
                         {days}
                     </select>
                     <span>To</span>

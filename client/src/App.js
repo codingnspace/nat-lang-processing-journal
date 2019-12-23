@@ -13,7 +13,7 @@ import YearInPixels from './components/YearInPixels';
 import WorryTree from './components/WorryTree';
 import Breath from './components/Breath';
 import UsMap from './components/UsMap';
-import BookLog, {FullBook} from './components/BookLog';
+import BookLog from './components/BookLog';
 import DonutChart from './components/DonutChart';
 import TextImageBox from './components/TextImageBox';
 import FoodTracker from './components/FoodTracker';
@@ -27,6 +27,8 @@ import SpendingLog from './components/SpendingLog';
 import SavingsLog from './components/SavingsLog';
 import FruitVeggies from './components/FruitVeggies';
 import ImportantDates from './components/ImportantDates';
+import MovieLog from './components/MovieLog';
+import SmartGoals from './components/SmartGoals';
 
 const sampleBookData = [
   {
@@ -74,9 +76,8 @@ function App() {
         <Route path="/worry-tree" render={() => <WorryTree />} />
         <Route path="/breath" render={() => <Breath />} />
         <Route path="/us-map" render={() => <UsMap />} />
-        <Route path="/book-log" render={() => <BookLog books={sampleBookData} />} >
+        <Route path="/book-log" render={() => <BookLog />} >
         </Route>
-        <Route path="/book-details/:id" render={() => <FullBook book={sampleBookData[0]} />} />
         <Route path="/donut-chart" render={() => <DonutChart />} />
         <Route path="/text-image-box" render={() => <TextImageBox />} />
         <Route path="/food-tracker" render={() => <FoodTracker />} />
@@ -91,6 +92,8 @@ function App() {
         <Route path="/savings-log" render={() => <SavingsLog savingsGoal="1000" />} />
         <Route path="/fruits-veggies-log" render={() => <FruitVeggies />} />
         <Route path="/important-dates" render={() => <ImportantDates month={12} year={2019} />} />
+        <Route path="/movie-log" render={() => <MovieLog />} />
+        <Route path="/goals" render={() => <SmartGoals />} />
       </Switch>
     </main>
    </Router>
