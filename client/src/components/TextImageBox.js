@@ -1,5 +1,4 @@
 import React from 'react'
-import fitty from 'fitty'
 
 export default class TextImageBox extends React.Component  {
     componentDidMount() {

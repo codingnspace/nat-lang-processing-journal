@@ -29,6 +29,7 @@ import FruitVeggies from './components/FruitVeggies';
 import ImportantDates from './components/ImportantDates';
 import MovieLog from './components/MovieLog';
 import SmartGoals from './components/SmartGoals';
+import HabitTracker from './components/HabitTracker';
 
 const sampleBookData = [
   {
@@ -94,6 +95,7 @@ function App() {
         <Route path="/important-dates" render={() => <ImportantDates month={12} year={2019} />} />
         <Route path="/movie-log" render={() => <MovieLog />} />
         <Route path="/goals" render={() => <SmartGoals />} />
+        <Route path="/habit-tracker" render={() => <HabitTracker />} />
       </Switch>
     </main>
    </Router>
