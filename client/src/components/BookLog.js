@@ -1,8 +1,8 @@
 import React from 'react'
-import { connect } from 'react-redux'
-import { addBookLog } from '../spreadReducer'
+import { connect, useSelector } from 'react-redux'
+import { addSpread } from '../spreadReducer'
 
-const mapDispatch = { addBookLog }
+const mapDispatch = { addSpread }
 
 const Book = ({book}) => {
     return (
@@ -24,12 +24,6 @@ const Book = ({book}) => {
 }
 
 class BookLog extends React.Component  {
-    constructor() {
-        super()
-        this.state = {
-            books: []
-        }
-    }
 
     handleSubmit = (e) => {
         e.preventDefault()
@@ -43,11 +37,8 @@ class BookLog extends React.Component  {
             thoughts: this.refs.thoughts.value
         }
 
-        this.props.addBookLog(newBook)
-        const newBooks = this.state.books.concat(newBook)
-        this.setState({
-            books: newBooks
-        })
+        this.props.addSpread({data: newBook, type: 'book-log'})
+   
         this.refs.name.value = ''
         this.refs.authorsName.value = ''
         this.refs.genre.value = ''
@@ -57,9 +48,10 @@ class BookLog extends React.Component  {
     }
 
     render() {
-        const bookList = this.state.books.map(book => {
-            return <Book book={book} />
+        const bookList = this.props.bookLogs.map(book => {
+            return <Book book={book.data} />
         })
+        console.log('book logs from state', this.props.bookLogs)
 
         return (
             <article className="BookLog">
@@ -108,7 +100,13 @@ class BookLog extends React.Component  {
     }
 }
 
+const mapStateToProps = (state) => {
+    const { spreads } = state
+    const bookLogs = spreads.filter(spread => spread.type === 'book-log')
+    return {bookLogs}
+}
+
 export default connect(
-    null,
+    mapStateToProps,
     mapDispatch
   )(BookLog)

@@ -3,7 +3,7 @@ const spreadsSlice = createSlice({
   name: 'spreads',
   initialState: [],
   reducers: {
-    addBookLog(state, action) {
+    addSpread(state, action) {
         console.log(action)
       state.push(action.payload)
     },
@@ -15,5 +15,5 @@ const spreadsSlice = createSlice({
     }
   }
 })
-export const { addBookLog, toggleTodo } = spreadsSlice.actions
+export const { addSpread, toggleTodo } = spreadsSlice.actions
 export default spreadsSlice.reducer
