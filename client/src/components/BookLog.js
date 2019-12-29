@@ -1,5 +1,8 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { addBookLog } from '../spreadReducer'
 
+const mapDispatch = { addBookLog }
 
 const Book = ({book}) => {
     return (
@@ -20,7 +23,7 @@ const Book = ({book}) => {
    )
 }
 
-export default class BookLog extends React.Component  {
+class BookLog extends React.Component  {
     constructor() {
         super()
         this.state = {
@@ -39,6 +42,8 @@ export default class BookLog extends React.Component  {
             coverUrl: this.refs.coverUrl.value,
             thoughts: this.refs.thoughts.value
         }
+
+        this.props.addBookLog(newBook)
         const newBooks = this.state.books.concat(newBook)
         this.setState({
             books: newBooks
@@ -102,3 +107,8 @@ export default class BookLog extends React.Component  {
         )
     }
 }
+
+export default connect(
+    null,
+    mapDispatch
+  )(BookLog)

@@ -81,7 +81,6 @@ export default class HabitTracker extends React.Component  {
     }
 
     render() {
-       
         return (
             <article className="HabitTracker">
                 <h3>Habit Tracker</h3>
@@ -94,6 +93,41 @@ export default class HabitTracker extends React.Component  {
                     year={2020}
                     legend={['Great', 'Okay', 'Bad']}
                     month={1} />
+            </article>
+        )
+    }
+}
+
+export class HabitTrackerForm extends React.Component  {
+    constructor() {
+        super()
+        this.state = {
+            listItems: []
+        }
+    }
+
+    render() {
+        return (
+            <article className="HabitTracker">
+                <h3>Habit Tracker</h3>
+                <form>
+                    <label>Habit Name</label>
+                    <input />
+                    <label>Habit Color(s)</label>
+                    <input />
+                    <label>Habit Legend</label>
+                    <input />
+                    <label>Month</label>
+                    <select>
+                        <option value={1}>January</option>
+                        <option value={2}>February</option>
+                    </select>
+                    <label>Year</label>
+                    <select>
+                        <option value={2020}>2020</option>
+                        <option value={2020}>2021</option>
+                    </select>
+                </form>
             </article>
         )
     }

@@ -18,6 +18,9 @@
   },
   "homepage": "https://github.com/codingnspace/nat-lang-processing-journal#readme",
   "dependencies": {
-    "concurrently": "^5.0.0"
+    "@reduxjs/toolkit": "^1.2.1",
+    "concurrently": "^5.0.0",
+    "react-redux": "^7.1.3",
+    "redux": "^4.0.5"
   }
 }
