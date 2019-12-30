@@ -1,13 +1,21 @@
-import React from 'react'
-import { connect, useSelector } from 'react-redux'
+import React, { useState } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import { addSpread } from '../spreadReducer'
 
-const mapDispatch = { addSpread }
+function useInput(initialValue){
+    const [value,setValue] = useState(initialValue);
+ 
+     function handleChange(e){
+         setValue(e.target.value);
+     }
+ 
+    return [value,handleChange];
+}
 
 const Book = ({book}) => {
     return (
         <article className="book--full">
-        <h3>{book.name}</h3>
+        <h3>{book.title}</h3>
        <div>
             <picture>
                 <img src={book.coverUrl} />
@@ -23,90 +31,90 @@ const Book = ({book}) => {
    )
 }
 
-class BookLog extends React.Component  {
+const BookLog = ({props}) =>  {
+    const [title, setTitle] = useInput('')
+    const [authorName, setAuthorName] = useInput('')
+    const [genre, setGenre] = useInput('')
+    const [rating, setRating] = useInput('')
+    const [coverUrl, setCoverUrl] = useInput('')
+    const [thoughts, setThoughts] = useInput('')
 
-    handleSubmit = (e) => {
+    const dispatch = useDispatch()
+    const bookLogs = useSelector((state) => {
+        return state.spreads.filter(spread => spread.type === 'book-log')
+    }) 
+    
+    const handleSubmit = (e) => {
         e.preventDefault()
 
         const newBook = {
-            name: this.refs.name.value,
-            authorName: this.refs.authorsName.value,
-            genre: this.refs.genre.value,
-            rating: this.refs.rating.value,
-            coverUrl: this.refs.coverUrl.value,
-            thoughts: this.refs.thoughts.value
+            title,
+            authorName,
+            genre,
+            rating,
+            coverUrl,
+            thoughts
         }
 
-        this.props.addSpread({data: newBook, type: 'book-log'})
-   
-        this.refs.name.value = ''
-        this.refs.authorsName.value = ''
-        this.refs.genre.value = ''
-        this.refs.rating.value = ''
-        this.refs.coverUrl.value = ''
-        this.refs.thoughts.value = ''
+        dispatch(addSpread({data: newBook, type: 'book-log'}))
+        
+        // setTitle('')
+        // setAuthorName('')
+        // setGenre('')
+        // setRating('')
+        // setCoverUrl('')
+        // setThoughts('')
     }
 
-    render() {
-        const bookList = this.props.bookLogs.map(book => {
-            return <Book book={book.data} />
-        })
-        console.log('book logs from state', this.props.bookLogs)
-
-        return (
-            <article className="BookLog">
-                <h2>Book Log</h2>
-                <form className="BookLog-add-new" onSubmit={this.handleSubmit}>
-                    <h3>Add New Book</h3>
-                    <label>Book Name</label>
-                    <input ref="name" placeholder="Add book's name..." />
-                    <label>Author's Name</label>
-                    <input ref="authorsName" placeholder="Add author's name..." />
-                    <label>Genre</label>
-                    <select ref="genre">
-                        <option>-----</option>
-                        <option>Autobiography/Memoir</option>
-                        <option>Essays</option>
-                        <option>Historical + Cultural</option>
-                        <option>Horror</option>
-                        <option>Literature</option>
-                        <option>Mystery</option>
-                        <option>Poetry</option>
-                        <option>Romance</option>
-                        <option>Sci-Fi</option>
-                        <option>Science</option>
-                        <option>Self Help</option>
-                        <option>Social Science</option>
-                        <option>Young Adult</option>
-                    </select>
-                    <label>Rating</label>
-                    <select ref="rating">
-                        <option>-----</option>
-                        <option>Horrendous</option>
-                        <option>Bad</option>
-                        <option>Okay</option>
-                        <option>Good</option>
-                        <option>Fantastic</option>
-                    </select>
-                    <label>Book Cover</label>
-                    <input ref="coverUrl" placeholder="Book cover url" />
-                    <label>Quick Thoughts</label>
-                    <textarea ref="thoughts" />
-                    <button type="submit">Add New</button>
-                </form>
-                {bookList}
-            </article>
-        )
-    }
+    const bookList = bookLogs && bookLogs.map(book => {
+        return <Book book={book.data} />
+    })
+    console.log('book logs from state', bookLogs)
+  
+    return (
+        <article className="BookLog">
+            <h2>Book Log</h2>
+            <form className="BookLog-add-new" onSubmit={handleSubmit}>
+                <h3>Add New Book</h3>
+                <label>Book Name</label>
+                <input placeholder="Add book's name..." onChange={setTitle} />
+                <label>Author's Name</label>
+                <input placeholder="Add author's name..." onChange={setAuthorName} />
+                <label>Genre</label>
+                <select onChange={setGenre}>
+                    <option>-----</option>
+                    <option>Autobiography/Memoir</option>
+                    <option>Essays</option>
+                    <option>Historical + Cultural</option>
+                    <option>Horror</option>
+                    <option>Literature</option>
+                    <option>Mystery</option>
+                    <option>Poetry</option>
+                    <option>Romance</option>
+                    <option>Sci-Fi</option>
+                    <option>Science</option>
+                    <option>Self Help</option>
+                    <option>Social Science</option>
+                    <option>Young Adult</option>
+                </select>
+                <label>Rating</label>
+                <select onChange={setRating}>
+                    <option>-----</option>
+                    <option>Horrendous</option>
+                    <option>Bad</option>
+                    <option>Okay</option>
+                    <option>Good</option>
+                    <option>Fantastic</option>
+                </select>
+                <label>Book Cover</label>
+                <input placeholder="Book cover url" onChange={setCoverUrl} />
+                <label>Quick Thoughts</label>
+                <textarea onChange={setThoughts} />
+                <button type="submit">Add New</button>
+            </form>
+            {bookList}
+        </article>
+    )
 }
 
-const mapStateToProps = (state) => {
-    const { spreads } = state
-    const bookLogs = spreads.filter(spread => spread.type === 'book-log')
-    return {bookLogs}
-}
-
-export default connect(
-    mapStateToProps,
-    mapDispatch
-  )(BookLog)
+export default BookLog
