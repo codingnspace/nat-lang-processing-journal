@@ -39,50 +39,49 @@ const spendingCategories = ["Food", "Rideshares", "Entertainment", "Travel",
 function App() {
 
   return (
-    <div>hi</div>
-  //  <Router>
-  //   <main className="App">
-  //     <Switch>
-  //       {/* <Route exact path="/" render={() => <ChatBox />} />
-  //       <Route path="/us-map" render={() => <UsMap />} />
-  //       <Route path="/service-log" render={() => <AttendService />} />
-  //       <Route path="/block-log" render={() => <BlockWall />} />
-  //       <Route path="/circles-chart" render={() => <ConcentricCircles />} />
-  //       <Route path="/icon-log" render={() => <IconLog />} />
-  //       <Route path="/food-tracker" render={() => <FoodTracker />} />
-  //       <Route path="/fruits-veggies-log" render={() => <FruitVeggies />} />
-  //       <Route path="/week-log" render={() => <Week />} />
-  //       <Route path="/bar-chart" render={() => <Bar progressPercent="40%" />} />
-  //       <Route path="/text-image-box" render={() => <TextImageBox />} /> */}
+   <Router>
+    <main className="App">
+      <Switch>
+        {/* <Route exact path="/" render={() => <ChatBox />} />
+        <Route path="/us-map" render={() => <UsMap />} />
+        <Route path="/service-log" render={() => <AttendService />} />
+        <Route path="/block-log" render={() => <BlockWall />} />
+        <Route path="/circles-chart" render={() => <ConcentricCircles />} />
+        <Route path="/icon-log" render={() => <IconLog />} />
+        <Route path="/food-tracker" render={() => <FoodTracker />} />
+        <Route path="/fruits-veggies-log" render={() => <FruitVeggies />} />
+        <Route path="/week-log" render={() => <Week />} />
+        <Route path="/bar-chart" render={() => <Bar progressPercent="40%" />} />
+        <Route path="/text-image-box" render={() => <TextImageBox />} /> */}
 
-  //       <Route path="/breath" render={() => <Breath />} />
-  //       <Route path="/book-log" render={() => <BookLog />} />
-  //       <Route path="/movie-log" render={() => <MovieLog />} />
-  //       <Route path="/gratitude-log" render={() => <GratitudeLog />} />
-  //       <Route path="/brag-list" render={() => <BragList />} />
-  //       <Route path="/self-care-list" render={() => <SelfCareList />} />
-  //       <Route path="/fav-quotes" render={() => <FavoriteQuotes />} />
-  //       <Route path="/wants-v-needs" render={() => <WantsVNeeds />} />
-  //       <Route path="/goals" render={() => <SmartGoals />} />
-  //       <Route path="/shopping-list" render={() => <ShoppingList />} />
+        <Route path="/breath" render={() => <Breath />} />
+        <Route path="/book-log" render={() => <BookLog />} />
+        <Route path="/movie-log" render={() => <MovieLog />} />
+        <Route path="/gratitude-log" render={() => <GratitudeLog />} />
+        <Route path="/brag-list" render={() => <BragList />} />
+        <Route path="/self-care-list" render={() => <SelfCareList />} />
+        <Route path="/fav-quotes" render={() => <FavoriteQuotes />} />
+        <Route path="/wants-v-needs" render={() => <WantsVNeeds />} />
+        <Route path="/goals" render={() => <SmartGoals />} />
+        <Route path="/shopping-list" render={() => <ShoppingList />} />
 
 
-  //       <Route path="/donut-chart" render={() => <DonutChart />} />
-  //       <Route path="/curated-imagery" render={() => <CuratedImagery />} />
-  //       <Route path="/spending-log"
-  //         render={() => <SpendingLog budget="200" categoryOptions={spendingCategories} />} />
-  //       <Route path="/savings-log" render={() => <SavingsLog savingsGoal="1000" />} />
-  //       <Route path="/important-dates" render={() => <ImportantDates month={12} year={2019} />} />
+        <Route path="/donut-chart" render={() => <DonutChart />} />
+        <Route path="/curated-imagery" render={() => <CuratedImagery />} />
+        <Route path="/spending-log"
+          render={() => <SpendingLog budget="200" categoryOptions={spendingCategories} />} />
+        <Route path="/savings-log" render={() => <SavingsLog savingsGoal="1000" />} />
+        <Route path="/important-dates" render={() => <ImportantDates month={12} year={2019} />} />
         
 
-  //       <Route path="/habit-tracker" render={() => <HabitTracker />} />
-  //       <Route path="/year-in-pixels" render={() => <YearInPixels />} />
+        <Route path="/habit-tracker" render={() => <HabitTracker />} />
+        <Route path="/year-in-pixels" render={() => <YearInPixels />} />
 
 
-  //       <Route path="/worry-tree" render={() => <WorryTree />} />
-  //     </Switch>
-  //   </main>
-  //  </Router>
+        <Route path="/worry-tree" render={() => <WorryTree />} />
+      </Switch>
+    </main>
+   </Router>
   );
 }
 

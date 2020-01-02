@@ -289,10 +289,31 @@ div.tooltip {
   background-color: blue;
 }
 
-.FavoriteQuotes-quotes,
-.CuratedList-items {
+.FavoriteQuotes-quotes {
   display: grid;
   grid-template-columns: auto;
+}
+
+.CuratedList-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+
+.Curated-Item img {
+  width: 100%;
+  height: auto;
+}
+
+.CuratedList-items .Curated-Item {
+  width: 30%;
+}
+
+.Curated-Item.full-screen {
+  width: 100%;
+  position: absolute;
 }
 
 .FavoriteQuotes-quotes .TextImageBox,
@@ -303,29 +324,6 @@ div.tooltip {
 @media screen and (min-width: 768px) {
   .FavoriteQuotes-quotes {
     grid-template-columns: auto auto auto;
-  }
-}
-
-.CuratedList-items {
-  border: 1px solid black;
-  padding: 30px;
-  width: 70%;
-  margin: auto;
-}
-
-.CuratedList-items .TextImageBox {
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 300px;
-  background-position: center;
-  padding: 0;
-  border: none;
-}
-
-@media screen and (min-width: 768px) {
-  .CuratedList-items .TextImageBox {
-    height: 500px;
-    background-position: initial;
   }
 }
 

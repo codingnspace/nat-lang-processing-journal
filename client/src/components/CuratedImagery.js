@@ -1,5 +1,4 @@
 import React from 'react'
-import TextImageBox from './TextImageBox'
 
 export default class CuratedImagery extends React.Component  {
     constructor() {
@@ -11,29 +10,37 @@ export default class CuratedImagery extends React.Component  {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        const curatedItemText = this.refs.newCuratedItemText;
         const curatedItemCategory = this.refs.newCuratedItemCategory;
         const curatedImage = this.refs.newCuratedImageUrl;
         const newcuratedItem = {
-            text: curatedItemText.value,
             category: curatedItemCategory.value,
             image: curatedImage.value
         }
         const newcuratedItemList = this.state.curatedList.concat(newcuratedItem)
         this.setState({curatedList: newcuratedItemList})
         
-        curatedItemText.value = ''
         curatedItemCategory.value = ''
         curatedImage.value = ''
+    }
+
+    handleImageClick = (e) => {
+        const target = e.target
+        const imageContainer = e.target.closest('.Curated-Item')
+        console.log(imageContainer, 'image container')
+        imageContainer.classList.toggle('full-screen')
     }
 
 
     render() {
         const curatedList = this.state.curatedList.map(curatedItem => {
-            return <TextImageBox key={curatedItem.text || curatedItem.image} text={curatedItem.text} image={curatedItem.image} />
+            return (
+                <div className="Curated-Item">
+                    <img src="https://via.placeholder.com/350x150" />
+                </div>
+            )
         })
 
-        const options = ['Life', 'Relationships', 'Motivation', 'Courage', 'Work/Grt']
+        const options = ['Life', 'Relationships', 'Motivation', 'Courage', 'Work/Grit']
             .sort()
             .map(option => {
                 return <option value={option} key={option}>{option}</option>
@@ -43,7 +50,6 @@ export default class CuratedImagery extends React.Component  {
             <article>
                 <h3>Curated List</h3>
                 <form onSubmit={this.handleSubmit}>
-                    <input ref="newCuratedItemText" placeholder="Add the famous saying..." />
                     <input ref="newCuratedImageUrl" placeholder="Url to an image..." />
                     <select ref="newCuratedItemCategory">
                         <option value="">--Please choose an option--</option>
@@ -51,7 +57,9 @@ export default class CuratedImagery extends React.Component  {
                     </select>
                     <button type="submit">Add</button>
                 </form>
-                <article className="CuratedList-items">{curatedList}</article>
+                <article className="CuratedList-items" onClick={this.handleImageClick}>
+                    {curatedList}
+                </article>
             </article>
         )
     }
