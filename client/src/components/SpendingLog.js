@@ -6,12 +6,6 @@ import { groupBy } from 'lodash'
 export default class SpendingLog extends React.Component  {
     constructor() {
         super()
-        // const catTotals = this.props.categoryOptions.map(option => {
-        //     return {
-        //         category: option,
-        //         total: 0
-        //     }
-        // })
         this.state = {
             listItems: [],
             current: 0,

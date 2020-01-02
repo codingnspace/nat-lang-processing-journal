@@ -6,7 +6,10 @@ export default class WantsVNeeds extends React.Component  {
         
         return (
             <article>
-                <List categoryOptions={["Need", "Want"]} title="Wants vs. Needs" noCheckmark={true} />
+                <List categoryOptions={["Need", "Want"]} 
+                    title="Wants vs. Needs" 
+                    noCheckmark={true} 
+                    type="wants" />
             </article>
         )
     }

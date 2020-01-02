@@ -8,7 +8,7 @@ export default class ShoppingList extends React.Component  {
         
         return (
             <article>
-                <List categoryOptions= {shoppingListOptions} title="Shopping List" />
+                <List categoryOptions= {shoppingListOptions} title="Shopping List" type="shopping" />
             </article>
         )
     }

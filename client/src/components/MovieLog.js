@@ -1,8 +1,13 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { addToSpread } from '../spreadReducer'
 
 import './ChatBox.css'
 
+const mapDispatch = { addToSpread }
+
 export const Movie = ({movie}) => {
+    console.log(movie)
     return (
         <article className="movie--full">
             <h3>{movie.name}</h3>
@@ -21,7 +26,7 @@ export const Movie = ({movie}) => {
     )
 }
 
-export default class MovieLog extends React.Component {
+class MovieLog extends React.Component {
     constructor() {
         super()
         this.state = {
@@ -43,6 +48,8 @@ export default class MovieLog extends React.Component {
         this.setState({
             movies: newMovies
         })
+        this.props.addToSpread({data: newMovie, type: 'movies'})
+
         this.refs.name.value = ''
         this.refs.genre.value = ''
         this.refs.rating.value = ''
@@ -51,7 +58,7 @@ export default class MovieLog extends React.Component {
     }
 
     render() {
-        const movieList = this.state.movies.map(movie => {
+        const movieList = this.props.movies.map(movie => {
             return <Movie movie={movie} />
         })
         return (
@@ -90,3 +97,14 @@ export default class MovieLog extends React.Component {
         )
     }
 }
+
+const mapStateToProps = (state) => {
+    const { spreads } = state
+    const movies = spreads.movies
+    return {movies}
+}
+
+export default connect(
+    mapStateToProps,
+    mapDispatch
+  )(MovieLog)

@@ -1,11 +1,21 @@
 import { createSlice } from '@reduxjs/toolkit'
 const spreadsSlice = createSlice({
   name: 'spreads',
-  initialState: [],
+  initialState: {
+    books: [],
+    movies: [],
+    gratitudes: [],
+    brags: [],
+    selfCareList: [],
+    quotes: [],
+    wants: [],
+    goals: [],
+    shopping: []
+  },
   reducers: {
-    addSpread(state, action) {
+    addToSpread(state, action) {
         console.log(action)
-      state.push(action.payload)
+      state[action.payload.type].push(action.payload.data)
     },
     toggleTodo(state, action) {
       const todo = state.find(todo => todo.id === action.payload)
@@ -15,5 +25,5 @@ const spreadsSlice = createSlice({
     }
   }
 })
-export const { addSpread, toggleTodo } = spreadsSlice.actions
+export const { addToSpread, toggleTodo } = spreadsSlice.actions
 export default spreadsSlice.reducer

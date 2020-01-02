@@ -1,7 +1,10 @@
 import React from 'react'
-import { groupBy } from 'lodash'
+import { connect } from 'react-redux'
+import { addToSpread } from '../spreadReducer'
 
-export default class GratitudeLog extends React.Component  {
+const mapDispatch = { addToSpread }
+
+class GratitudeLog extends React.Component  {
     constructor() {
         super()
         this.state = {
@@ -12,6 +15,8 @@ export default class GratitudeLog extends React.Component  {
     handleSubmit = (e) => {
         e.preventDefault()
         const newListItems = this.state.listItems.concat(this.refs.newListItemText.value)
+        this.props.addToSpread({data: this.refs.newListItemText.value, type: 'gratitudes'})
+
         this.setState({
             listItems: newListItems
         })
@@ -19,7 +24,10 @@ export default class GratitudeLog extends React.Component  {
     }
 
     render() {
-        const listItems = this.state.listItems.map(liText => {
+        console.log(this.props.gratitudes, 'GRatitudes')
+        const gratitudes = this.props.gratitudes
+        const listItems = gratitudes.map(liText => {
+            console.log('liText', liText)
             return <li>{liText}</li>
         })
        
@@ -38,3 +46,15 @@ export default class GratitudeLog extends React.Component  {
         )
     }
 }
+
+const mapStateToProps = (state) => {
+    const { spreads } = state
+    const gratitudes = spreads.gratitudes
+    console.log('gratitudes returned in mapstatetopropss', gratitudes)
+    return {gratitudes}
+}
+
+export default connect(
+    mapStateToProps,
+    mapDispatch
+)(GratitudeLog)

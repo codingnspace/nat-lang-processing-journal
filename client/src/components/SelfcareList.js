@@ -1,6 +1,10 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { addToSpread } from '../spreadReducer'
 
-export default class SelfCareList extends React.Component  {
+const mapDispatch = { addToSpread }
+
+class SelfCareList extends React.Component  {
     constructor() {
         super()
         this.state = {
@@ -11,6 +15,8 @@ export default class SelfCareList extends React.Component  {
     handleSubmit = (e) => {
         e.preventDefault()
         const newListItems = this.state.listItems.concat(this.refs.newListItemText.value)
+        this.props.addToSpread({data: this.refs.newListItemText.value, type: 'selfCareList'})
+
         this.setState({
             listItems: newListItems
         })
@@ -18,7 +24,7 @@ export default class SelfCareList extends React.Component  {
     }
 
     render() {
-        const listItems = this.state.listItems.map(liText => {
+        const listItems = this.props.selfCareList.map(liText => {
             return <li>{liText}</li>
         })
        
@@ -37,3 +43,14 @@ export default class SelfCareList extends React.Component  {
         )
     }
 }
+
+const mapStateToProps = (state) => {
+    const { spreads } = state
+    const selfCareList = spreads.selfCareList
+    return {selfCareList}
+}
+
+export default connect(
+    mapStateToProps,
+    mapDispatch
+)(SelfCareList)

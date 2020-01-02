@@ -1,7 +1,13 @@
 import React from 'react'
 import { groupBy } from 'lodash'
 
-export default class List extends React.Component  {
+import { connect } from 'react-redux'
+import { addToSpread } from '../spreadReducer'
+
+const mapDispatch = { addToSpread }
+
+
+class List extends React.Component  {
     constructor() {
         super()
         this.state = {
@@ -18,6 +24,9 @@ export default class List extends React.Component  {
             category: liCategory.value
         }
         const newLiList = this.state.listItems.concat(newLi)
+
+        this.props.addToSpread({data: newLi, type: this.props.type})
+
         this.setState({listItems: newLiList})
        
         liText.value = ''
@@ -36,7 +45,7 @@ export default class List extends React.Component  {
 
     render() {
         const { categoryOptions, title, noCheckmark } = this.props
-        const listItems = this.state.listItems
+        const listItems = this.props.items
         const groupedLisByCategory = groupBy(listItems, 'category')
         const categories = Object.keys(groupedLisByCategory)
         const addedItems = categories.map(cat => {
@@ -84,3 +93,13 @@ export default class List extends React.Component  {
         )
     }
 }
+
+const mapStateToProps = (state, ownProps) => {
+    const type = ownProps.type
+    return {items: state.spreads[type]}
+}
+
+export default connect(
+    mapStateToProps,
+    mapDispatch
+)(List)

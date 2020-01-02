@@ -15,7 +15,7 @@ export default class SmartGoals extends React.Component  {
                     <li><strong>Where</strong> where is it located?</li>
                     <li><strong>Which</strong> which resources or limits are involved?</li>
                 </ul>
-                <List categoryOptions= {goalOptions} title="Smart Goals" />
+                <List categoryOptions= {goalOptions} title="Smart Goals" type="goals" />
             </article>
         )
     }

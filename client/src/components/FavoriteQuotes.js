@@ -1,7 +1,11 @@
 import React from 'react'
 import TextImageBox from './TextImageBox'
+import { connect } from 'react-redux'
+import { addToSpread } from '../spreadReducer'
 
-export default class FavoriteQuotes extends React.Component  {
+const mapDispatch = { addToSpread }
+
+class FavoriteQuotes extends React.Component  {
     constructor() {
         super()
         this.state = {
@@ -19,6 +23,8 @@ export default class FavoriteQuotes extends React.Component  {
             category: quoteCategory.value,
             source: quoteSource.value
         }
+        this.props.addToSpread({data: newQuote, type: 'quotes'})
+
         const newQuoteList = this.state.quotes.concat(newQuote)
         this.setState({quotes: newQuoteList})
         
@@ -29,7 +35,7 @@ export default class FavoriteQuotes extends React.Component  {
 
 
     render() {
-        const quotes = this.state.quotes.map(quote => {
+        const quotes = this.props.quotes.map(quote => {
             return <TextImageBox key={quote.text} text={`${quote.text} -- ${quote.source}`} />
         })
 
@@ -56,3 +62,12 @@ export default class FavoriteQuotes extends React.Component  {
         )
     }
 }
+
+const mapStateToProps = (state) => {
+    return {quotes: state.spreads.quotes}
+}
+
+export default connect(
+    mapStateToProps,
+    mapDispatch
+)(FavoriteQuotes)
