@@ -2,6 +2,9 @@ const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
 const cors = require('cors');
+const mongoose = require('mongoose');
+const dbConfig = require('./db');
+const userRoute = require('../backend/routes/user.route')
 // Set CORS headers on all responses
 // const cors = require('cors');
 const { NlpManager } = require('node-nlp');
@@ -9,6 +12,18 @@ const { NlpManager } = require('node-nlp');
 // app.use(cors())
 const port = 3001
 const logger = require('morgan');
+
+// Connecting mongoDB Database
+mongoose.Promise = global.Promise;
+mongoose.connect(dbConfig.db, {
+  useNewUrlParser: true
+}).then(() => {
+  console.log('Database sucessfully connected!')
+},
+  error => {
+    console.log('Could not connect to database : ' + error)
+  }
+)
 // const router = app.Router();
 const manager = new NlpManager({ languages: ['en'] });
 // Adds the utterances and intents for the NLP
@@ -131,6 +146,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(logger('dev'))
 app.use(cors())
+
 app.use(function(req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
@@ -148,6 +164,8 @@ app.post('/newUserMsg', (req, res) => {
         res.send(result) 
     })
 });
+
+app.use('/users', userRoute)
 
 
 // append /api for our http requests

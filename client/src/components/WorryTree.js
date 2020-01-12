@@ -92,6 +92,12 @@ export default class WorryTree extends React.Component  {
         this.setState({
             currentQuestion: this.state.currentQuestion + 1
         })
+        axios.post('/users/create-user', {
+            name: 'Pearl McPhee',
+            email: 'myEmail@gmail.com',
+            spreads: [this.state.newChat, {myData: 'test'}]
+        })
+        .then(res => console.log(res.data));
     }
 
 
